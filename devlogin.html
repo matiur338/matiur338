@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.N.P Login</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link the SAME CSS file -->
+    <style>
+        /* Styles from previous step (centering the form) */
+        .login-container {
+            max-width: 450px; /* Adjust width as needed */
+            margin: 40px auto; /* Top/bottom margin + auto left/right for centering */
+            padding: 30px;     /* Internal spacing */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center inline content like the title */
+        }
+        .login-title { margin-bottom: 25px; color: #333; font-size: 1.8em; }
+        .login-form .form-group { margin-bottom: 20px; text-align: left; }
+        .login-form label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        .login-form input[type="text"],
+        .login-form input[type="password"] { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 1em; }
+        .login-form .login-button { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1em; transition: background-color 0.3s ease; }
+        .login-form .login-button:hover { background-color: #0056b3; }
+        .form-links { margin-top: 15px; text-align: center; }
+        .form-links a { color: #007bff; text-decoration: none; font-size: 0.9em; }
+        .form-links a:hover { text-decoration: underline; }
+
+        /* Style for the error message */
+        #login-error {
+            color: red;
+            margin-top: 15px;
+            font-weight: bold;
+            min-height: 1em; /* Prevent layout shift when message appears/disappears */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section (Same as index.html) -->
+    <header>
+        <!-- ... header content ... -->
+    </header>
+
+    <!-- Navigation Menu (Same as index.html) -->
+    <nav>
+     </nav>
+    <!-- Main Content Area - Login Form -->
+    <main class="login-container">
+        <h2 class="login-title">Developer Login</h2>
+        <!-- Added id="login-form" -->
+        <form id="login-form" action="#" method="post" class="login-form">
+            <div class="form-group">
+                <label for="username">Username or Email:</label>
+                <!-- Kept id="username" -->
+                <input type="text" id="username" name="username" required placeholder="Enter your username or email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <!-- Kept id="password" -->
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <!-- Added an empty div for error messages -->
+            <div id="login-error"></div>
+            <div class="form-group">
+                <button type="submit" class="login-button">Login</button>
+            </div>
+            <div class="form-links">
+                <a href="#">Forgot Password?</a>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer Section (Same as index.html) -->
+    <footer>
+       <!-- ... footer content ... -->
+    </footer>
+
+    <!-- JavaScript for Login Logic -->
+    <script>
+        // Get references to the form, input fields, and error message area
+        const loginForm = document.getElementById('login-form');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const errorDiv = document.getElementById('login-error');
+
+        // Add an event listener for the form's submit event
+        loginForm.addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior (page reload)
+            event.preventDefault();
+
+            // Get the entered username and password
+            const enteredUsername = usernameInput.value.trim(); // .trim() removes whitespace
+            const enteredPassword = passwordInput.value;
+
+            // --- !!! INSECURE LOGIN CHECK !!! ---
+            // --- This check is visible in the browser's source code ---
+            // --- DO NOT USE FOR REAL APPLICATIONS ---
+            const correctUsername = 'admin';
+            const correctPassword = '9800131338';
+
+            if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+                // Success: Redirect to devmenu.html
+                errorDiv.textContent = ''; // Clear any previous error
+                console.log('Login successful. Redirecting...'); // Optional console message
+                window.location.href = 'devmenu.html'; // Perform the redirect
+            } else {
+                // Failure: Show an error message
+                errorDiv.textContent = 'Invalid username or password.';
+                passwordInput.value = ''; // Optionally clear the password field
+                usernameInput.focus(); // Set focus back to username field
+                console.log('Login failed.'); // Optional console message
+            }
+            // --- End of insecure check ---
+        });
+    </script>
+
+</body>
+</html>
