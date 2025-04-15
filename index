@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.N.P. Home</title> <!-- Updated Title -->
+    <link rel="stylesheet" href="style.css"> <!-- Linking the CSS file -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+           
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Project</a></li>
+            <li><a href="#">My Future Project</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+           <li><a href="devlogin.html">Admin Login</a></li>
+            </ul>
+    </nav>
+
+    <!-- Page Titles Section Below Nav -->
+    <div class="page-titles-area">
+        <div class="page-title-container">
+            <h3 class="page-title company-name">SOFTWARE DEVELOPER DASHBOARD</h3>
+        </div>
+        </div>
+
+    <!-- Main Content Area -->
+    <main>
+        <h3 class="content-heading">Introduction</h3> <!-- Changed p1 to h3 -->
+        <p>
+            School Management Software is an integrated system designed to manage the day-to-day administrative and academic operations of a school. It simplifies tasks such as student registration, attendance tracking, exam results, staff management, fees collection, notifications, and more.
+        </p>
+    </main> <!-- Closing the main tag -->
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Updated Copyright Year and Name -->
+        <p>© 2025 NOOR NETWORK POINT (CSC). All rights reserved.</p>
+        <p>Designed by the Developer.</p>
+    </footer>
+
+</body>
+</html>
